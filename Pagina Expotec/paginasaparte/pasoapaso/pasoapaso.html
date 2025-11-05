@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paso a Paso</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+            <h1>Basurero Automatico</h1>
+    </header>
+
+        <div class="pasoapaso">
+        <h1>Paso a Paso</h1>
+    </div>
+
+    <div class="pasoapaso"> 
+        <h1>Planteamiento de la idea</h1>
+        <p>El proyecto surge con el objetivo de automatizar la separación de residuos, facilitando el reciclaje mediante el uso de sensores y servomotores.<br>
+            La idea principal fue diseñar un sistema con dos tachos:<br>
+            Uno para residuos reciclables (bolsa verde).<br>
+            Otro para residuos comunes (bolsa negra).<br>
+            Cada tacho se abre automáticamente al detectar el color correspondiente de la bolsa.</p>
+    </div>
+
+    <div class="pasoapaso"> 
+        <h1>Diseño y boceto</h1>
+        <p>Antes de comenzar con la construcción, se realizaron bocetos en papel cuadriculado para definir:<br>
+            La disposición de los tachos.<br>
+            La ubicación de los sensores de color y de distancia.<br>
+            El mecanismo de apertura de las tapas.<br>
+            El espacio interno para la placa Arduino, los cables y la batería.<br>
+            Este diseño permitió planificar la estructura en madera y prever los agujeros donde se colocarían los sensores.</p>
+    </div>
+
+    <div class="pasoapaso">
+        <h1>Selección de componentes</h1>
+        <p>Los principales componentes utilizados fueron:<br>
+            Placa Arduino UNO.<br>
+            Sensor TCS3200 (detección de color).<br>
+            Sensor ultrasónico HC-SR04 (detección de distancia o movimiento).<br>
+            Servomotores SG90 o MG90S (para apertura de las tapas).<br>
+            Protoboard y cables Dupont.<br>
+            Fuente de alimentación o batería de 9V.<br>
+            Estructura de madera o plástico reciclado.</p>
+    </div>
+
+    <div class="pasoapaso">
+        <h1>Montaje del circuito</h1>
+        <p> Conectar el sensor de color al Arduino según sus pines (S0, S1, S2, S3, OUT, VCC, GND).<br>
+            Conectar el sensor ultrasónico a los pines de disparo (Trig) y eco (Echo).<br>
+            Conectar los servomotores a los pines PWM del Arduino (por ejemplo, 9 y 10).<br>
+            Alimentar todo el circuito desde el Arduino o desde una fuente externa de 5V.<br>
+            Probar las conexiones en una protoboard antes de soldar o montar definitivamente.</p>
+    </div>
+
+    <div class="pasoapaso">
+        <h1>Construcción física</h1>
+        <p> Cortar y armar la estructura de los tachos con madera o cartón duro.<br>
+            Realizar los agujeros precisos para los sensores, cuidando la alineación con el área de detección.<br>
+            Instalar los servomotores con soportes, asegurando que puedan mover las tapas sin trabarse.<br>
+            Organizar los cables, evitando tensiones o cruces, y fijarlos para evitar desconexiones.</p>
+    </div>
+
+    <div class="pasoapaso">
+        <h1>Programación del sistema</h1>
+        <p> En el entorno del Arduino IDE, se cargó un programa que:<br>
+            Lee la distancia con el sensor ultrasónico.<br>
+            Cuando una bolsa se acerca (por ejemplo, a menos de 10 cm), el Arduino activa el sensor de color.<br>
+            El sensor de color entrega valores RGB.<br>
+            Según esos valores:<br>
+            Si el color detectado se aproxima al verde, se activa el servo del tacho de reciclaje.<br>
+            Si el color es negro o oscuro, se activa el servo del tacho de residuos comunes.<br>
+            Después de unos segundos, las tapas se cierran automáticamente.</p>
+    </div>
+
+    <div class="pasoapaso"> 
+        <h1>Calibración de sensores</h1>
+        <p>Este paso fue crucial:<br>
+            Se tomaron múltiples lecturas del sensor TCS3200 con diferentes colores y condiciones de luz.<br>
+            Se registraron los valores RGB promedio para cada color de bolsa.<br>
+            En base a esos valores, se definieron los rangos de detección en el código (por ejemplo, verde entre ciertos valores de G y B).<br>
+            También se ajustó la distancia de activación del sensor ultrasónico para evitar que se active por error.</p>
+    </div>
+
+    <div class="pasoapaso"> 
+        <h1>Pruebas y correcciones</h1>
+        <p>Durante las pruebas, surgieron varios ajustes:<br>
+            Problemas de calibración (colores muy similares).<br>
+            Apertura inexacta del servo por la falta de bisagra.<br>
+            Cables cortos o flojos, que interrumpían las señales.<br>
+            Errores en librerías que impedían la lectura del color.<br>
+            Todos estos inconvenientes fueron solucionados mediante ajustes mecánicos, eléctricos y de código.
+    </div>
+
+
+    <footer id="contactos">
+    <p>Todos los derechos reservados 2025.</p>
+    <p>Hecho por Rivera Franco, Cristobal Joaquin, Pinto Jeremias, <br> Felissia Santiago, Gabutti Julian y Arrayago Tomas.</p>
+   </footer>
+</body>
+</html>
