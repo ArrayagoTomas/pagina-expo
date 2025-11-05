@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problemas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+            <h1>Basurero Automatico</h1>
+    </header>
+
+    <div class="problemas">
+        <h1>Problemas</h1>
+    </div>
+
+    <div class="problemas"> 
+        <h1>Calibración del sensor de color</h1>
+        <p>Uno de los mayores desafíos fue calibrar el sensor TCS3200, encargado de distinguir el color de la bolsa.
+        El proceso implicó convertir las lecturas del sensor a valores RGB, interpretarlos correctamente y luego establecer los rangos de color que permitieran diferenciar entre bolsas verdes (reciclables) y bolsas negras (no reciclables).
+        Debido a variaciones en la iluminación y en la distancia de lectura, fue necesario realizar múltiples pruebas hasta obtener una calibración estable y confiable.</p>
+    </div>
+
+    <div class="problemas"> 
+        <h1>Mecanismo de apertura sin bisagra</h1>
+        <p>El diseño del sistema debía permitir que las tapas de los tachos se abrieran automáticamente sin utilizar una bisagra convencional.
+        Esto generó dificultades al momento de definir el movimiento del servomotor, ya que había que lograr una apertura suave, controlada y con el ángulo exacto para permitir el ingreso de la bolsa sin dañar el mecanismo.
+        Se probaron distintas posiciones del servo y se ajustaron los soportes hasta lograr un funcionamiento fluido.</p>
+    </div>
+
+    <div class="problemas">
+        <h1>Longitud de los cables</h1>
+        <p>La disposición física de los componentes dentro del proyecto ocasionó problemas con la longitud de los cables.
+        Algunos sensores quedaban demasiado alejados de la placa Arduino, lo que provocaba ruido en las señales o conexiones inestables.
+        Se resolvió utilizando cables más largos y organizando el cableado con canaletas y bridas, para mantener un montaje ordenado y seguro.</p>
+    </div>
+
+    <div class="problemas">
+        <h1>Librerías para el Arduino</h1>
+        <p>Durante la programación del sistema, surgieron inconvenientes con la instalación y compatibilidad de librerías necesarias para controlar el sensor de color, el sensor ultrasónico y los servomotores.
+        Fue necesario revisar versiones, buscar alternativas y probar distintas configuraciones en el entorno del Arduino IDE hasta lograr que todos los módulos funcionaran correctamente de forma conjunta.</p>
+    </div>
+
+    <div class="problemas">
+        <h1>Agujeros para los sensores en la estructura</h1>
+        <p>En la fase de armado, hubo que perforar la estructura de madera con precisión para ubicar los sensores.
+        Esto fue un reto, ya que debían quedar alineados y a la distancia adecuada para detectar correctamente tanto el color como la proximidad de la bolsa.
+        Una mala ubicación podía alterar las lecturas o impedir el correcto funcionamiento del mecanismo de apertura.</p>
+    </div>
+
+    <footer id="contactos">
+    <p>Todos los derechos reservados 2025.</p>
+    <p>Hecho por Rivera Franco, Cristobal Joaquin, Pinto Jeremias, <br> Felissia Santiago, Gabutti Julian y Arrayago Tomas.</p>
+   </footer>
+</body>
+</html>
