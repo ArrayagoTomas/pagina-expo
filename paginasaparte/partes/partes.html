@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partes del proyecto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">   
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><img src="flecha.png" alt="atras" width="50px"></a>
+        <h1>Basurero Automatico</h1>
+    </header>
+
+    <div class="partes" id="partes">
+    <h1>Partes del proyecto</h1>
+   </div>
+
+    <div class="partes1">
+        <button onclick="mostrarModal(
+            'Arduino',
+            'El Arduino UNO es una placa de desarrollo de hardware libre basada en el microcontrolador ATmega328P. <br> Se utiliza para diseñar y programar prototipos electrónicos de manera sencilla, permitiendo la interacción entre componentes físicos (sensores, motores, luces, etc.) y software. <br> La placa cuenta con 14 pines digitales de entrada/salida, 6 entradas analógicas, un puerto USB para cargar programas y comunicarse con la computadora, además de una entrada de alimentación externa. <br> Puede programarse mediante el entorno de desarrollo Arduino IDE, utilizando un lenguaje basado en C/C++.',
+        )">
+            <img src="partes2/arduino.png" alt="Arduino" width="300px">
+        </button>
+    </div>
+
+    <div class="partes1">
+        <button onclick="mostrarModal(
+            'Ultrasonico',
+            'El sensor ultrasónico es un dispositivo electrónico que permite medir distancias mediante el uso de ondas sonoras de alta frecuencia (ultrasonido). <br> Funciona emitiendo un pulso de sonido que rebota en un objeto y regresa al sensor; el tiempo que tarda en volver se utiliza para calcular la distancia entre el sensor y el objeto, aplicando la fórmula: <br> Distancia= Tiempo x Velocidad de Sonido / 2',
+        )">
+            <img src="partes2/ultrasonico.png" alt="Ultrasonico" width="300px">
+        </button>
+    </div>
+
+    <div class="partes1">
+        <button onclick="mostrarModal(
+            'TCS3200',
+            'El TCS3200 es un sensor de color programable que permite detectar y medir los colores de la luz reflejada por un objeto. <br> Está compuesto por una matriz de fotodiodos con filtros de color rojo, verde, azul y transparente, junto con un convertidor de frecuencia integrado que transforma la intensidad de cada color en una señal de salida digital (en forma de frecuencia). <br> El microcontrolador (como un Arduino UNO) puede leer estas señales y determinar la composición RGB (rojo, verde, azul) del color detectado, permitiendo identificarlo con gran precisión.',
+        )">
+            <img src="partes2/TCS3200.png" alt="Sensor TCS3200" width="300px">
+        </button>
+    </div>
+
+        <div class="partes1">
+        <button onclick="mostrarModal(
+            'Servomotor',
+            'El servomotor es un dispositivo electromecánico que permite controlar con precisión la posición, velocidad y dirección de un eje. <br> Está compuesto por un motor de corriente continua (DC), un sistema de engranajes reductores, un potenciómetro (que actúa como sensor de posición) y un circuito de control electrónico que regula el movimiento. <br> El servomotor recibe una señal de control por pulsos (PWM) desde un microcontrolador (como Arduino), y ajusta su posición angular en función de esa señal. <br> Generalmente, puede moverse dentro de un rango de 0° a 180°, aunque existen modelos de rotación continua.',
+        )">
+            <img src="partes2/servo.png" alt="Servomotores" width="300px">
+        </button>
+    </div>
+
+    <div id="miModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="cerrarModal()">&times;</span>
+        <h2 id="modalTitulo"></h2>
+        <div id="modalContenido"></div>
+    </div>
+</div>
+
+<script>
+    function mostrarModal(titulo, texto, imagenURL = "") {
+        document.getElementById("modalTitulo").innerHTML = titulo;
+
+        let contenido = texto;
+        if (imagenURL !== "") {
+            contenido += `<br><img src="${imagenURL}" alt="${titulo}" style="max-width:100%; margin-top:10px;">`;
+        }
+
+        document.getElementById("modalContenido").innerHTML = contenido;
+        document.getElementById("miModal").style.display = "flex";
+    }
+
+    function cerrarModal() {
+        document.getElementById("miModal").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        let modal = document.getElementById("miModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+    
+
+<footer id="contactos">
+    <p>Todos los derechos reservados 2025.</p>
+    <p>Hecho por Rivera Franco, Cristobal Joaquin, Pinto Jeremias, <br> Felissia Santiago, Gabutti Julian y Arrayago Tomas.</p>
+   </footer>
+</body>
+</html>
